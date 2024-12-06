@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retoques Detailing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="c:\Users\ALICIA PETRO\Downloads\PROYECTO DE LA PAGINA WEB\Imagenes\Servicio de polichado (2).png" type="image/png">
+</head>
+<body>
+<img src="https://drive.google.com/uc?export=view&id=13hMWzscdNdPGoh95AdVCI5ADvV4df-Ve" alt="Imagen desde Google Drive">
+
+
+
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <img src="c:\Users\ALICIA PETRO\Downloads\PROYECTO DE LA PAGINA WEB\Imagenes\Servicio de polichado (2).png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#latoneria">Latonería y Pintura</a></li>
+                <li><a href="#polichado">Polichado</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Inicio -->
+    <section id="inicio" class="hero">
+        <!-- Puedes añadir contenido aquí si lo necesitas -->
+    </section>
+
+    <!-- Carrusel de Imágenes -->
+    <section id="carrusel" class="content">
+        <div class="slider">
+            <div class="slides">
+                <img src="c:\Users\ALICIA PETRO\Downloads\PROYECTO DE LA PAGINA WEB\Imagenes\Polichado de carros  (1).png" alt="Imagen 1">
+                <img src="c:\Users\ALICIA PETRO\Downloads\PROYECTO DE LA PAGINA WEB\Imagenes\Polichado profesional (1).jpg" alt="Imagen 2">
+                <img src="c:\Users\ALICIA PETRO\Downloads\PROYECTO DE LA PAGINA WEB\Imagenes\Polichada (1).jpg" alt="Imagen 3">
+                <img src="c:\Users\ALICIA PETRO\Downloads\PROYECTO DE LA PAGINA WEB\Imagenes\Recubrimiento ceramico (1).jpg" alt="Imagen 4">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Sección de Bienvenida -->
+        <div class="welcome-text">
+            <h1>¡BIENVENIDOS!</h1>
+            <p>Retoques Detailing, su especialista en servicios de pintura automotriz y pulido de carros, porcelanizada, diamantizada y pintura automotriz 100% a domicilio.</p>
+
+            <!-- Sección Cobertura -->
+            <div class="text-container">
+                <h2>Cobertura</h2>
+                <p>Polichado, porcelanizadas, recubrimiento cerámico a domicilio en lugares como: Bello, Medellín, Poblado, Envigado, Itagüí, Sabaneta, La Estrella y Caldas.</p>
+            </div>
+        </div>
+
+        <!-- Sección de Video -->
+        <div class="video-container">
+            <!-- Primer video -->
+            <iframe id="video-frame-1" title="Polichado a domicilio" allowfullscreen width="560" height="315"></iframe>
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="https://www.youtube.com/watch?v=6_7lpLF8p2o" target="_blank" style="color: #FF0000; font-weight: bold;">Mirar en YouTube - Video 1</a>
+            </div>      
+        </div>
+    </div>
+
+    <!-- Botón de WhatsApp -->
+    <div class="whatsapp">📞</div>
+
+    <script>
+        // Cambiar el enlace de los videos dinámicamente
+        let videoId1 = "6_7lpLF8p2o"; // Primer video
+
+        // Establecer las URLs de los iframes
+        document.getElementById('video-frame-1').src = `https://www.youtube.com/embed/${videoId1}`;
+    
+
+        // Lógica del botón de WhatsApp
+        document.querySelector('.whatsapp').addEventListener('click', function() {
+            window.open('https://wa.me/573223025959', '_blank');
+        });
+
+        // Carrusel de imágenes automático
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelector('.slides');
+            const images = document.querySelectorAll('.slider img');
+            let currentIndex = 0;
+            const totalImages = images.length;
+
+            function moveCarousel() {
+                currentIndex++;
+                if (currentIndex >= totalImages) {
+                    currentIndex = 0;
+                }
+                const offset = -currentIndex * 100;
+                slides.style.transform = `translateX(${offset}%)`;
+            }
+
+            setInterval(moveCarousel, 3000);
+        });
+    </script>
+
+</body>
+</html>

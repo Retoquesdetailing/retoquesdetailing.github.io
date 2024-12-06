@@ -1,0 +1,423 @@
+/* Carrusel de imágenes */
+.slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 650px; /* Ajuste de altura */
+    position: relative;
+    margin: 0 auto;
+    justify-content: center; /* Centrado */
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Transición suave */
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen no se distorsione */
+}
+
+/* Aseguramos que el carrusel no se "salte" ni se quede en blanco */
+#carrusel {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header {
+    position: fixed; /* Fija el encabezado en la parte superior */
+    top: 0; /* Colócalo en la parte superior */
+    left: 0;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    z-index: 1000; /* Mantén el encabezado por encima de otros elementos */
+    background-color: #fff; /* Fondo blanco para el encabezado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opcional, para agregar sombra */
+}
+
+body {
+    padding-top: 80px; /* Añade un margen superior para que el contenido no quede oculto por el encabezado fijo */
+}
+
+/* Estilo del botón de WhatsApp */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Estilos generales para la página */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: auto;
+    padding: 10px;
+}
+
+header .logo img {
+    width: 250px;
+    height: auto;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    padding-left: 0; /* Eliminar cualquier espacio adicional a la izquierda */
+    margin-left: 0; /* Eliminar margen a la izquierda */
+}
+
+header nav ul li {
+    margin-left: 0; /* Eliminar márgenes a la izquierda de los elementos */
+}
+
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centra los elementos del menú horizontalmente */
+    align-items: center; /* Centra los elementos del menú verticalmente */
+    margin: 0; /* Elimina márgenes adicionales */
+    padding: 0; /* Elimina el padding adicional */
+}
+
+header nav ul li {
+    margin-left: 20px; /* Puedes ajustar este margen entre los elementos */
+    display: flex; /* Hace que cada li sea un contenedor flexible */
+    align-items: center; /* Centra el contenido dentro de cada li */
+   
+  
+    
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 15px; /* Ajustar el espaciado dentro de los enlaces */
+    transition: color 0.4s ease;
+
+}
+
+
+
+
+
+
+
+/* Estilo general del menú */
+
+nav ul li {
+    margin-right: 30px;             /* Espaciado entre los elementos de la lista */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;                    /* Color de los enlaces */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+/* Estilo para los iconos sociales */
+nav .socials a {
+    margin-left: 20px;               /* Espaciado entre los iconos */
+    text-decoration: none;
+    color: #333;
+}
+
+/* Estilo para el responsive en pantallas pequeñas */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;        /* Cambia la dirección de los elementos en pantallas pequeñas */
+        align-items: flex-start;       /* Alinea los elementos a la izquierda */
+    }
+
+    nav ul {
+        width: 100%;                   /* Asegura que los enlaces ocupen el 100% del ancho */
+        justify-content: flex-start;   /* Alinea los enlaces a la izquierda */
+    }
+
+    nav .whatsapp {
+        margin-top: 20px;              /* Da margen al botón de WhatsApp */
+    }
+
+    nav .socials {
+        margin-top: 10px;              /* Da margen superior a los íconos sociales */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+/* Estilo activo o al pasar el cursor */
+header nav ul li a.active,
+header nav ul li a:hover {
+    background-color: red; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    padding: 5px 10px; /* Ajustar el espaciado */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+
+h1 {
+    text-decoration: none;
+    color: #000;
+    padding-left: 200px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.welcome-text {
+    width: 60%;
+}
+
+.welcome-text h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.welcome-text p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.video-container {
+    width: 35%;
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 300%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
+header nav ul li a.active,
+header nav ul li a:hover {
+    background-color: red; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    padding: 5px 10px; /* Espacio alrededor del texto */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+header nav ul li a.active {
+    background-color: rgb(0, 0, 0); /* Fondo negro cuando está activo */
+    color: white; /* Texto blanco */
+}
+
+/* ----- Transiciones de Página - Suaves ----- */
+
+/* Definir las animaciones de transición de página */
+@keyframes slide-horizontal-new {
+    0% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slide-horizontal-old {
+    80% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide-vertical-new {
+    0% {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes slide-vertical-old {
+    80% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+@keyframes out-in-new {
+    0% {
+        opacity: 0;
+    }
+}
+
+@keyframes out-in-old {
+    to {
+        opacity: 0;
+    }
+}
+
+/* Aplicar la animación de transiciones */
+html[data-page-transition=SlideHorizontal]::view-transition-old(page-group) {
+    animation: slide-horizontal-old .6s cubic-bezier(.83,0,.17,1) forwards;
+    mix-blend-mode: normal;
+}
+
+html[data-page-transition=SlideHorizontal]::view-transition-new(page-group) {
+    animation: slide-horizontal-new .6s cubic-bezier(.83,0,.17,1) backwards;
+    mix-blend-mode: normal;
+}
+
+html[data-page-transition=SlideVertical]::view-transition-old(page-group) {
+    animation: slide-vertical-old .6s cubic-bezier(.83,0,.17,1) forwards;
+    mix-blend-mode: normal;
+}
+
+html[data-page-transition=SlideVertical]::view-transition-new(page-group) {
+    animation: slide-vertical-new .6s cubic-bezier(.83,0,.17,1) backwards;
+    mix-blend-mode: normal;
+}
+
+html[data-page-transition=OutIn]::view-transition-old(page-group) {
+    animation: out-in-old .35s cubic-bezier(.64,0,.78,0) forwards;
+}
+
+html[data-page-transition=OutIn]::view-transition-new(page-group) {
+    animation: out-in-new .35s cubic-bezier(.22,1,.36,1) .35s backwards;
+}
+
+/* Reducción de animaciones en accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*), ::view-transition-new(*), ::view-transition-old(*) {
+        animation: none !important;
+    }
+}
+
+/* ----- Menú Desplegable ----- */
+
+/* Estilos generales del menú desplegable */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 00;
+    margin: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+/* Menú desplegable para dispositivos móviles */
+.navbar .menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.navbar .menu-toggle i {
+    color: white;
+    font-size: 24px;
+}
+
+/* Estilo del menú en móviles */
+.navbar .nav-links {
+    display: flex;
+}
+
+.navbar .nav-links ul {
+    display: flex;
+}
+
+.navbar .nav-links ul li {
+    margin-right: 20px;
+}
+
+/* Menú responsive en pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+        width: 100%;
+        background-color: #333;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+    }
+
+    .navbar .nav-links.active {
+        display: block;
+    }
+
+    .navbar .menu-toggle {
+        display: block;
+    }
+
+    .navbar .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar .nav-links ul li {
+        margin: 0;
+        text-align: center;
+    }
+}
+
+/* Animación para el menú desplegable */
+.navbar .nav-links ul li a:hover {
+    background-color: #575757;
+}
